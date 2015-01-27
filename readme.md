@@ -14,7 +14,7 @@ A modern re-implementation of AJAX page loading (better known as infinite scroll
 
 Install via Bower:
 
-```bower install pg8-loader -D```
+```bower install pg8-ajax-page-loader -D```
 
 Integrate into your theme however you wish. Be sure to include all JavaScript dependencies. See [Pendrell](https://github.com/synapticism/pendrell) for examples of usage.
 
@@ -24,7 +24,7 @@ Integrate into your theme however you wish. Be sure to include all JavaScript de
 
 You will need to add some code to your `functions.php` file (or equivalent) to provision the front-end script with necessary data. Here is an example:
 
-```language-php
+```
 global $wp_query;
 
 $max = $wp_query->max_num_pages;
@@ -40,6 +40,14 @@ $pg8_vars = array(
 
 wp_localize_script( $handle, 'PG8Data', $pg8_vars );
 ```
+
+
+
+## Credits
+
+* Originally based on my own work with [Ajaxinate](https://github.com/synapticism/ajaxinate) (which is itself based on many other projects).
+* With some help from [Pro Blog Design](http://www.problogdesign.com/wordpress/load-next-wordpress-posts-with-ajax/).
+* jQuery plugin design pattern inspired by [Ryan Florence](http://ryanflorence.com/authoring-jquery-plugins-with-object-oriented-javascript/).
 
 
 

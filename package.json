@@ -1,7 +1,7 @@
 {
   "name": "pg8-ajax-page-loader",
   "version": "0.0.1",
-  "description": "An AJAX page loader",
+  "description": "An AJAX page loader script for WordPress",
   "homepage": "https://github.com/synapticism/pg8-ajax-page-loader",
   "repository": {
     "type": "git",
