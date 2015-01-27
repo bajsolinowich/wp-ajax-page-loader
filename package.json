@@ -1,0 +1,25 @@
+{
+  "name": "pg8-ajax-page-loader",
+  "version": "0.0.1",
+  "description": "An AJAX page loader",
+  "homepage": "https://github.com/synapticism/pg8-ajax-page-loader",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synapticism/pg8-ajax-page-loader.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wordpress",
+    "javascript",
+    "jquery",
+    "infinitescroll",
+    "ajax",
+    "loader"
+  ],
+  "main": "pg8-loader.js",
+  "author": "Alexander Synaptic",
+  "license": "GPLv3",
+  "private": true
+}
