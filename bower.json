@@ -1,9 +1,10 @@
 {
-  "name": "pg8-ajax-page-loader",
-  "homepage": "https://github.com/synapticism/pg8-ajax-page-loader",
+  "name": "wp-ajax-page-loader",
+  "homepage": "https://github.com/synapticism/wp-ajax-page-loader",
   "authors": [
-    "Alexander Synaptic <alexander@synapticism.com>"
+    { "name": "Alexander Synaptic", "email": "alexander@synapticism.com", "homepage": "http://synapticism.com" }
   ],
+  "main": "wp-ajax-page-loader.js",
   "keywords": [
     "wordpress",
     "javascript",
@@ -12,15 +13,17 @@
     "ajax",
     "loader"
   ],
-  "license": "GPLv3",
-  "private": true,
+  "license": "MIT/GPLv3",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests",
-    "composer.json",
-    "package.json"
-  ]
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^1.11.1",
+    "html5-history-api": "^4.1.15",
+    "spin.js": "^2.0.2"
+  }
 }
