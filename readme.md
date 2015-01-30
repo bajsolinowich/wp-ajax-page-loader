@@ -1,6 +1,6 @@
 # WP AJAX Page Loader
 
-This script is a modern implementation of AJAX page loading (sometimes known as infinite scrolling) for use with WordPress. [Read the original announcement on my blog](http://synapticism.com/an-ajax-page-loading-script-for-wordpress/).
+This jQuery plugin is a modern implementation of AJAX page loading (sometimes known as infinite scrolling) for use with WordPress. I created it in part to address [some issues with using history.js](https://stackoverflow.com/questions/11230581/is-there-an-alternative-to-history-js) (which is commonly used in infinite scrolling implementations) as well as to provide a raw script for theme and plugin developers to easily integrate into their own workflow. [Read the original announcement on my blog](http://synapticism.com/an-ajax-page-loading-script-for-wordpress/).
 
 Requires: [jQuery](https://jquery.com/) (included in WordPress by default), [HTML5 History API](https://github.com/devote/HTML5-History-API), and [spin.js](https://github.com/fgnass/spin.js).
 
@@ -10,11 +10,11 @@ Footprint: **15.5 Kb** minified with core dependencies.
 * Displays a loading spinner while content is loading.
 * Smoothly scrolls to the top of the new page's contents.
 * Updates URL with current page whenever scrolling stops.
-* Footer safe by default: infinite scrolling won't be triggered at the very bottom of the page.
+* "Footer safe" mode: infinite scrolling won't be triggered at the very bottom of the page by default.
 * Compatible with Google Analytics (universal and legacy support).
 * Designed to be easily integrated and configured.
 
-Have a look at [Pendrell](https://github.com/synapticism/pendrell) for an example of integration and usage and check out [my blog](http://synapticism.com) for a **live demo** (just scroll almost but not quite to the bottom of the index and you should see it in action).
+Have a look at [Pendrell](https://github.com/synapticism/pendrell) for an example of integration and usage and check out [my blog](http://synapticism.com) for a **live demo** (just scroll almost *but not quite to the bottom* of the index and you should see it in action).
 
 
 
@@ -92,7 +92,7 @@ Sample template markup (adapted from [_s](https://github.com/Automattic/_s)):
 
 Sample script instantiation matching the markup above (the next selector is superfluous since it matches the default for this particular starter theme but I'm including it here for the sake of clarity):
 
-```
+```javascript
 $(document.body).ajaxPageLoader({ contentSel: '.content-wrapper', nextSel: '.nav-next' });
 ```
 
@@ -101,8 +101,6 @@ $(document.body).ajaxPageLoader({ contentSel: '.content-wrapper', nextSel: '.nav
 ## Development
 
 Interested in hacking on this script? Install dependencies with `npm install` and then run Gulp: `gulp`. This will lint the main script, assemble the script bundles, and minify the results.
-
-A bit of background for developers: [a few issues with history.js](https://stackoverflow.com/questions/11230581/is-there-an-alternative-to-history-js) (which many infinite scrolling implementations rely on).
 
 *Pull requests, issues, and comments are welcome!*
 
