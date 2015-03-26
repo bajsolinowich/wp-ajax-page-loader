@@ -27,7 +27,7 @@ var PG8 = {};
     this.maxPages = parseInt(PG8Data.maxPages);
     this.maxedOut = 0; // A flag to determine whether all pages have been loaded
     this.opts     = $.extend({}, $.fn.ajaxPageLoader.defaults, opts);
-    this.content  = $(this.opts.contentSel);
+    this.content  = $(this.opts.content);
 
     // Initialize page loader only if there are pages to load
     if (this.nextPage <= this.maxPages) {
@@ -70,7 +70,7 @@ var PG8 = {};
         $window = $(window);
 
       // Bind to click events on the body element to ensure compatibility with other forms of DOM manipulation we may be doing
-      $('body').on('click', self.opts.nextSel, function(event){
+      $('body').on('click', self.opts.next, function(event){
 
         // Are there more posts to load? This has to be checked again as nextPage increments
         if (self.nextPage <= self.maxPages) {
@@ -138,7 +138,7 @@ var PG8 = {};
             // Trigger a click when the bottom of the window is just below the contents of the last page
             // But not the absolute bottom; we'd like to be able to reach the footer if we can!
             if ( scrollPosition > scrollLastPage + self.opts.scrollOffset && scrollPosition <= scrollLastPage + self.opts.scrollOffset + self.opts.infinOffset && scrollDiff >= self.opts.infinFooter ) {
-              $(self.opts.nextSel).trigger('click');
+              $(self.opts.next).trigger('click');
             }
           }, self.opts.infinDelay)); // end $.data()
         } // end infinite scroll
@@ -170,10 +170,10 @@ var PG8 = {};
       var self = this;
 
       // Load content into the appropriate page loader
-      $('#content-page-'+page).load(link+' '+self.opts.contentSel+' > *', function() {
+      $('#content-page-'+page).load(link+' '+self.opts.content+' > *', function() {
 
         // Cache the next selector
-        var $navLink = $(self.opts.nextSel);
+        var $navLink = $(self.opts.next);
 
         // Update page number and nextLink
         self.thisPage = page;
@@ -202,6 +202,10 @@ var PG8 = {};
         // Hide spinner
         $('#spinner').hide();
 
+        // Hide previous link (if one exists)
+        $(self.opts.prev).hide();
+
+        // Emit loaded event
         self.loaded();
 
         // Scroll to the appropriate location
@@ -266,15 +270,16 @@ var PG8 = {};
 
   // Extensible default settings
   $.fn.ajaxPageLoader.defaults = {
-    contentSel:    'main'               // The content selector; this varies from theme to theme
-  , nextSel:       '.nav-next'          // Selector for the "next" navigation link; this is also theme-dependent
-  , scrollDelay:   300                  // Smooth scrolling delay; use a larger value for a smoother scroll (s)
-  , scrollOffset:  30                   // Scroll offset from the top of the new page to account for margins (px)
-  , pushDelay:     250                  // How long to wait before attempting to update history state (s)
-  , infinDelay:    600                  // How long to wait before requesting new content automatically (s)
-  , infinOffset:   300                  // Height of the area below the last page in which infinite scrolling will be triggered (px)
-  , infinFooter:   1                    // Height from the bottom of the page from which infinite scrolling *won't* be triggered (px)
-  , spinOpts: {                         // spin.js options; reference: https://fgnass.github.io/spin.js/
+    content:      'main'        // The content selector; this varies from theme to theme
+  , next:         '.next-page'  // Selector for the "next" navigation link; this is also theme-dependent
+  , prev:         '.prev-page'  // Selector for the "next" navigation link; this is also theme-dependent
+  , scrollDelay:  300           // Smooth scrolling delay; use a larger value for a smoother scroll (s)
+  , scrollOffset: 30            // Scroll offset from the top of the new page to account for margins (px)
+  , pushDelay:    250           // How long to wait before attempting to update history state (s)
+  , infinDelay:   600           // How long to wait before requesting new content automatically (s)
+  , infinOffset:  300           // Height of the area below the last page in which infinite scrolling will be triggered (px)
+  , infinFooter:  1             // Height from the bottom of the page from which infinite scrolling *won't* be triggered (px)
+  , spinOpts: {                 // spin.js options; reference: https://fgnass.github.io/spin.js/
       lines:  25
     , length: 0
     , width:  4

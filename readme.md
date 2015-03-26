@@ -93,7 +93,7 @@ Sample template markup (adapted from [_s](https://github.com/Automattic/_s)):
 Sample script instantiation matching the markup above (the next selector is superfluous since it matches the default for this particular starter theme but I'm including it here for the sake of clarity):
 
 ```javascript
-$(document.body).ajaxPageLoader({ contentSel: '.content-wrapper', nextSel: '.nav-next' });
+$(document.body).ajaxPageLoader({ content: '.content-wrapper', next: '.nav-next' });
 ```
 
 
