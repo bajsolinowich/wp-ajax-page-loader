@@ -7,7 +7,7 @@
 // Global namespace object; inspiration for the design of this via Ryan Florence: http://ryanflorence.com/authoring-jquery-plugins-with-object-oriented-javascript/
 var PG8 = {};
 
-;(function($, document, window, undefined){
+(function($, document, window, undefined){
   'use strict';
 
   // Exit early if WordPress script variables aren't available

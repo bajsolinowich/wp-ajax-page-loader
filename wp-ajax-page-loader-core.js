@@ -1,5 +1,5 @@
 /*!
- * History API JavaScript Library v4.1.15
+ * History API JavaScript Library v4.2.0
  *
  * Support: IE8+, FF3+, Opera 9+, Safari, Chrome and other
  *
@@ -11,7 +11,7 @@
  *   http://www.opensource.org/licenses/mit-license.php
  *   http://www.gnu.org/licenses/gpl.html
  *
- * Update: 2014-10-31 21:58
+ * Update: 2014-11-06 21:35
  */
 (function(factory) {
     if (typeof define === 'function' && define['amd']) {
@@ -1485,7 +1485,7 @@ $('#el').spin('flower', 'red');
 // Global namespace object; inspiration for the design of this via Ryan Florence: http://ryanflorence.com/authoring-jquery-plugins-with-object-oriented-javascript/
 var PG8 = {};
 
-;(function($, document, window, undefined){
+(function($, document, window, undefined){
   'use strict';
 
   // Exit early if WordPress script variables aren't available

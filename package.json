@@ -1,6 +1,6 @@
 {
   "name": "wp-ajax-page-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An AJAX page loader script for WordPress",
   "homepage": "https://github.com/synapticism/wp-ajax-page-loader",
   "repository": {

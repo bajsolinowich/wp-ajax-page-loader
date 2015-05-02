@@ -17,7 +17,7 @@ gulp.task('lint', function() {
 gulp.task('bundle', ['lint'], function(){
   var bundles = [
     ['complete', [bower+'jquery/dist/jquery.js', bower+'html5-history-api/history.iegte8.js', bower+'spin.js/spin.js', bower+'spin.js/jquery.spin.js', 'wp-ajax-page-loader.js'] ],
-    ['core', [bower+'html5-history-api/history.iegte8.js', bower+'spin.js/spin.js', bower+'spin.js/jquery.spin.js', 'wp-ajax-page-loader.js'] ]
+    ['core', [bower+'html5-history-api/history.js', bower+'spin.js/spin.js', bower+'spin.js/jquery.spin.js', 'wp-ajax-page-loader.js'] ]
   ];
 
   // Define the task for each bundle in the bundles array

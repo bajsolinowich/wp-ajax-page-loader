@@ -22,7 +22,7 @@
   ],
   "devDependencies": {
     "jquery": "^1.11.1",
-    "html5-history-api": "^4.1.15",
+    "html5-history-api": "^4.2.0",
     "spin.js": "^2.0.2"
   }
 }
