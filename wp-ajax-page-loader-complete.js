@@ -10764,7 +10764,7 @@ $('#el').spin('flower', 'red');
 
 }));
 
-// ==== WP AJAX PAGE LOADER 0.1.0 ==== //
+// ==== WP AJAX PAGE LOADER 0.1.1 ==== //
 
 // WP AJAX Page Loader documentation: https://github.com/synapticism/wp-ajax-page-loader
 // Based on Ajaxinate: https://github.com/synapticism/ajaxinate
