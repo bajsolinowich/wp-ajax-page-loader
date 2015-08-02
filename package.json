@@ -1,6 +1,6 @@
 {
   "name": "wp-ajax-page-loader",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An AJAX page loader script for WordPress",
   "homepage": "https://github.com/synapticism/wp-ajax-page-loader",
   "repository": {
@@ -22,13 +22,13 @@
   "author": "Alexander Synaptic <alexander@synapticism.com>",
   "license": "MIT/GPLv3",
   "devDependencies": {
-    "gulp": "^3.8.10",
-    "gulp-concat": "^2.4.2",
-    "gulp-jshint": "^1.9.0",
-    "gulp-load-plugins": "^0.8.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-uglify": "^1.0.2",
-    "gulp-util": "^3.0.1",
-    "merge-stream": "^0.1.6"
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-load-plugins": "^1.0.0-rc",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6",
+    "merge-stream": "^0.1.8"
   }
 }

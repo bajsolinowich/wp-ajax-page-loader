@@ -10764,7 +10764,7 @@ $('#el').spin('flower', 'red');
 
 }));
 
-// ==== WP AJAX PAGE LOADER 0.1.1 ==== //
+// ==== WP AJAX PAGE LOADER 0.1.2 ==== //
 
 // WP AJAX Page Loader documentation: https://github.com/synapticism/wp-ajax-page-loader
 // Based on Ajaxinate: https://github.com/synapticism/ajaxinate
@@ -10786,11 +10786,11 @@ var PG8 = {};
 
   // Constructor function
   var PageLoader = this.PageLoader = function(opts){
-    this.thisPage = parseInt(PG8Data.startPage);
     this.thisLink = location.href;
-    this.nextPage = this.thisPage + 1;
     this.nextLink = PG8Data.nextLink;
-    this.maxPages = parseInt(PG8Data.maxPages);
+    this.thisPage = parseInt(PG8Data.startPage, 10);
+    this.nextPage = this.thisPage + 1;
+    this.maxPages = parseInt(PG8Data.maxPages, 10);
     this.maxedOut = 0; // A flag to determine whether all pages have been loaded
     this.opts     = $.extend({}, $.fn.ajaxPageLoader.defaults, opts);
     this.content  = $(this.opts.content);
@@ -10935,7 +10935,7 @@ var PG8 = {};
     loader: function(page, link){
       var self = this;
 
-      // Load content into the appropriate page loader
+      // Load content into the appropriate container
       $('#content-page-'+page).load(link+' '+self.opts.content+' > *', function() {
 
         // Cache the next selector
@@ -10945,7 +10945,7 @@ var PG8 = {};
         self.thisPage = page;
         self.thisLink = link;
         self.nextPage = page + 1;
-        self.nextLink = link.replace(/\/page\/[0-9]?/, '/page/'+self.nextPage);
+        self.nextLink = link.replace(/\/page\/[0-9]*/, '/page/'+self.nextPage);
 
         // @TODO: load scripts necessary to display content on new pages e.g. MediaElement.js
         // Presently this script assumes all scripts are already loaded
