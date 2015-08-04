@@ -1,4 +1,4 @@
-// ==== WP AJAX PAGE LOADER 0.1.2 ==== //
+// ==== WP AJAX PAGE LOADER 0.1.3 ==== //
 
 // WP AJAX Page Loader documentation: https://github.com/synapticism/wp-ajax-page-loader
 // Based on Ajaxinate: https://github.com/synapticism/ajaxinate
@@ -126,7 +126,7 @@ var PG8 = {};
         }, self.opts.pushDelay)); // end $.data()
 
         // Infinite scroll, a lazy (yet smart) implementation
-        if ( self.maxedOut === 0 ) { // Only bother with this if there are more pages to load
+        if ( self.maxedOut === 0 && self.opts.infinScroll === true ) { // Only bother with this if there are more pages to load AND infinite scroll is on
           $.data(this, 'infinTimer', setTimeout(function() {
             var
               $document       = $(document),
@@ -191,12 +191,16 @@ var PG8 = {};
         // Create another placeholder
         self.holder();
 
-        // Navigation link handling
+        // Navigation link handling: 1) have we reached the last page? 2) if not, update the link
         if (self.nextPage > self.maxPages) {
-          $navLink.remove(); // End of the line
+          $navLink.remove(); // No more content can be loaded; hide the next button or link
           self.maxedOut = 1; // Set a flag to avoid further processing
         } else {
-          $('a', $navLink).attr('href', self.nextLink); // Update the navigation links (for right-click etc.)
+          if ( $navLink.is('[href]') ) {
+            $navLink.attr('href', self.nextLink); // Next selector has href; update it for right-clicking etc.
+          } else {
+            $('[href]', $navLink).attr('href', self.nextLink); // Next selector contains href
+          }
         }
 
         // Hide spinner
@@ -276,6 +280,7 @@ var PG8 = {};
   , scrollDelay:  300           // Smooth scrolling delay; use a larger value for a smoother scroll (s)
   , scrollOffset: 30            // Scroll offset from the top of the new page to account for margins (px)
   , pushDelay:    250           // How long to wait before attempting to update history state (s)
+  , infinScroll:  true          // Switch for infinite scrolling functionality (true/false)
   , infinDelay:   600           // How long to wait before requesting new content automatically (s)
   , infinOffset:  300           // Height of the area below the last page in which infinite scrolling will be triggered (px)
   , infinFooter:  1             // Height from the bottom of the page from which infinite scrolling *won't* be triggered (px)

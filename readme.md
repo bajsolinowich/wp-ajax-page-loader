@@ -1,6 +1,6 @@
 # WP AJAX Page Loader
 
-This jQuery plugin is a modern implementation of AJAX page loading (sometimes known as infinite scrolling) for use with WordPress. I created it in part to address [some issues with using history.js](https://stackoverflow.com/questions/11230581/is-there-an-alternative-to-history-js) (which is commonly used in infinite scrolling implementations) as well as to provide a raw script for theme and plugin developers to easily integrate into their own workflow. [Read the original announcement on my blog](http://synapticism.com/dev/an-ajax-page-loading-script-for-wordpress/).
+This lightweight jQuery plugin is a modern implementation of AJAX page loading (sometimes known as infinite scrolling) for use with WordPress. I created it in part to address [some issues with using history.js](https://stackoverflow.com/questions/11230581/is-there-an-alternative-to-history-js) (which is commonly used in infinite scrolling implementations) as well as to provide a raw script for theme and plugin developers to easily integrate into their own workflow. [Read the original announcement on my blog](http://synapticism.com/dev/an-ajax-page-loading-script-for-wordpress/).
 
 Requires: [jQuery](https://jquery.com/) (included in WordPress by default), [HTML5 History API](https://github.com/devote/HTML5-History-API), and [spin.js](https://github.com/fgnass/spin.js).
 
@@ -109,6 +109,14 @@ Interested in hacking on this script? Install dependencies with `npm install` an
 ## To Do
 
 * Load additional scripts as needed. Currently the AJAX request only saves content, not scripts or anything else, and this might create some problems for blogs that rely on conditional script loading.
+
+
+
+## Alternatives
+
+* The original [Infinite Scroll](https://github.com/infinite-scroll/infinite-scroll) (no longer maintained)
+* [Waypoints Infinite Scroll](http://imakewebthings.com/waypoints/shortcuts/infinite-scroll/)
+* [jScroll](https://github.com/pklauzinski/jscroll) (even more minimal)
 
 
 
