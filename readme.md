@@ -20,11 +20,19 @@ Have a look at [Pendrell](https://github.com/synapticism/pendrell) for an exampl
 
 ## Installation
 
-Install via Bower `bower install wp-ajax-page-loader -D` and then integrate into your existing asset pipeline or simply copy the desired script bundle (probably `wp-ajax-page-loader-core.min.js`) into your theme.
+### Bower
+
+`bower install wp-ajax-page-loader -D`
+
+### npm
+
+`npm install wp-ajax-page-loader --save-dev`
 
 
 
 ## Setup
+
+Integrate this script into your existing asset pipeline or simply copy the desired script bundle (probably `wp-ajax-page-loader-core.min.js`) into your theme.
 
 To activate this script you will need to add some code to your `functions.php` file (or equivalent) to enqueue the script and output the required `PG8Data` script variables. Here is an example (to be wrapped in a function called by the `wp_enqueue_scripts` action):
 
@@ -94,6 +102,18 @@ Sample script instantiation matching the markup above (the next selector is supe
 
 ```javascript
 $(document.body).ajaxPageLoader({ content: '.content-wrapper', next: '.nav-next' });
+```
+
+
+
+## Events
+
+This script emits `DOMContentLoaded` after loading new content. Need to trigger one of your own scripts after loading? Easy:
+
+```
+document.addEventListener("DOMContentLoaded", function(event){
+  // do something
+});
 ```
 
 
