@@ -4,7 +4,7 @@ This lightweight jQuery plugin is a modern implementation of AJAX page loading (
 
 Requires: [jQuery](https://jquery.com/) (included in WordPress by default), [HTML5 History API](https://github.com/devote/HTML5-History-API), and [spin.js](https://github.com/fgnass/spin.js).
 
-Footprint: **15.5 Kb** minified with core dependencies, 3.5 Kb without.
+Footprint: **16 Kb** minified with core dependencies, 3.5 Kb without.
 
 * Loads new content on click *and* when the scroll position falls between specified points.
 * Displays a configurable loading spinner while content is loading.

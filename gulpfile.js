@@ -16,7 +16,7 @@ gulp.task('lint', function() {
 // Create script bundles
 gulp.task('bundle', ['lint'], function(){
   var bundles = [
-    ['complete', [modules+'jquery/dist/jquery.js', modules+'html5-history-api/history.iegte8.js', modules+'spin.js/spin.js', modules+'spin.js/jquery.spin.js', 'wp-ajax-page-loader.js'] ],
+    ['complete', [modules+'jquery/dist/jquery.js', modules+'html5-history-api/history.js', modules+'spin.js/spin.js', modules+'spin.js/jquery.spin.js', 'wp-ajax-page-loader.js'] ],
     ['core', [modules+'html5-history-api/history.js', modules+'spin.js/spin.js', modules+'spin.js/jquery.spin.js', 'wp-ajax-page-loader.js'] ]
   ];
 
